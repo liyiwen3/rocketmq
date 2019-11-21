@@ -283,7 +283,7 @@ public class MQClientInstance {
                     log.error("ScheduledTask updateTopicRouteInfoFromNameServer exception", e);
                 }
             }
-        }, 10, this.clientConfig.getPollNameServerInterval(), TimeUnit.MILLISECONDS);//30s 执行一次updateTopicRouteInfoFromNameServer
+        }, 10, this.clientConfig.getPollNameServerInterval(), TimeUnit.MILLISECONDS);//30s 执行一次updateTopicRouteInfoFromNameServe
 
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 

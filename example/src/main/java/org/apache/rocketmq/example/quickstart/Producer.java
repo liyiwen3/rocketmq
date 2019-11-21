@@ -52,6 +52,7 @@ public class Producer {
 
         //Thread.sleep(10 * 60 * 1000);
 
+
         for (int i = 0; i < 1000; i++) {
             try {
 
@@ -74,6 +75,7 @@ public class Producer {
                 Thread.sleep(1000);
             }
         }
+
 
         Thread.sleep(10 * 60 * 1000);
 
