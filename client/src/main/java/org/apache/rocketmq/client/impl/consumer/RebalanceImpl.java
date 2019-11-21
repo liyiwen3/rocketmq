@@ -397,7 +397,7 @@ public abstract class RebalanceImpl {
             }
         }
 
-        this.dispatchPullRequest(pullRequestList);
+        this.dispatchPullRequest(pullRequestList);//所以对消息的拉取是由再平衡驱动的，因为你只有在平衡了，才能知道你分配到哪些队列也才可以对消息进行拉取
 
         return changed;
     }
