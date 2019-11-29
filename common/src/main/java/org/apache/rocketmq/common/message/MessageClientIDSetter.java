@@ -56,9 +56,9 @@ public class MessageClientIDSetter {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
-        startTime = cal.getTimeInMillis();
+        startTime = cal.getTimeInMillis();//这个月的第一天
         cal.add(Calendar.MONTH, 1);
-        nextStartTime = cal.getTimeInMillis();
+        nextStartTime = cal.getTimeInMillis();//下个月的第一天
     }
 
     public static Date getNearlyTimeFromID(String msgID) {

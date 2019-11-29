@@ -73,14 +73,14 @@ public class RemotingCommand {
     private LanguageCode language = LanguageCode.JAVA;
     private int version = 0;
     private int opaque = requestId.getAndIncrement();
-    private int flag = 0;
+    private int flag = 0;//flag的第一个位 0表示Request， 1表示是response， 第二个位0表示是rpc， 1为oneway
     private String remark;
     private HashMap<String, String> extFields;
-    private transient CommandCustomHeader customHeader;
+    private transient CommandCustomHeader customHeader;//加入transient关键字则这个字段不会tojson
 
     private SerializeType serializeTypeCurrentRPC = serializeTypeConfigInThisServer;
 
-    private transient byte[] body;
+    private transient byte[] body;//加入transient关键字则这个字段不会tojson
 
     protected RemotingCommand() {
     }

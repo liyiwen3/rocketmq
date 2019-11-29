@@ -44,7 +44,7 @@ public class RemoteBrokerOffsetStore implements OffsetStore {
     private final MQClientInstance mQClientFactory;
     private final String groupName;
     private ConcurrentMap<MessageQueue, AtomicLong> offsetTable =
-        new ConcurrentHashMap<MessageQueue, AtomicLong>();
+        new ConcurrentHashMap<MessageQueue, AtomicLong>();//用于存储当前消费者所订阅的所有的消息队列的offset，offset表示这个offset之前的消息都消费完了
 
     public RemoteBrokerOffsetStore(MQClientInstance mQClientFactory, String groupName) {
         this.mQClientFactory = mQClientFactory;
