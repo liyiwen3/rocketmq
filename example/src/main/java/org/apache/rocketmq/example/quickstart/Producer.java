@@ -53,6 +53,7 @@ public class Producer {
         //Thread.sleep(10 * 60 * 1000);
 
 
+        long start = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
             try {
 
@@ -75,6 +76,8 @@ public class Producer {
                 Thread.sleep(1000);
             }
         }
+        System.out.println("花费时间：");
+        System.out.println( System.currentTimeMillis() - start);
 
 
         Thread.sleep(10 * 60 * 1000);
