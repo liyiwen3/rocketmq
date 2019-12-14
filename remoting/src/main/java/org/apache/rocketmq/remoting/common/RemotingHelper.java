@@ -52,6 +52,12 @@ public class RemotingHelper {
         return sb.toString();
     }
 
+    public static void main(String[] args) {
+        int a = 0;
+        Exception e = new NullPointerException("eroror test");
+        System.out.println(exceptionSimpleDesc(e));
+    }
+
     public static SocketAddress string2SocketAddress(final String addr) {
         String[] s = addr.split(":");
         InetSocketAddress isa = new InetSocketAddress(s[0], Integer.parseInt(s[1]));

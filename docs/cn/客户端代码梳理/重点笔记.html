@@ -1,0 +1,47 @@
+<h1 style="font-size: 32px; font-weight: bold; border-bottom: 2px solid rgb(204, 204, 204); padding: 0px 4px 0px 0px; text-align: center; margin: 0px 0px 20px;">
+    重点笔记<br/>
+</h1>
+<p>
+    1、广播模式不会重试<br/>
+</p>
+<p>
+    2、广播模式的顺序模式和集群模式的顺序模式有一些不一样
+</p>
+<p>
+    3、顺序模式如果不是自动提交，那offset怎么提交的
+</p>
+<p>
+    4、顺序模式如果不设置最大重试次数，则消息会在客户端无限重试
+</p>
+<p>
+    5、集群模式的顺序模式为啥要在服务端进行锁定
+</p>
+<p>
+    6、client到一个broker和ns的连接只有一个
+</p>
+<p>
+    7、发送重投
+</p>
+<p>
+    如果是同步发送，依赖于retryTimesWhenSendFailed和retryAnotherBrokerWhenNotStoreOK两个参数
+</p>
+<p>
+    当retryAnotherBrokerWhenNotStoreOK是false的时候，抛出异常则重试，不抛出则不重投。retryAnotherBrokerWhenNotStoreOK=true,抛出异常或者发送结果不是SEND_OK都会重投。<br/>
+</p>
+<p>
+    重投次数由retryTimesWhenSendFailed控制。
+</p>
+<p>
+    如果是异步发送，则依赖于retryTimesWhenSendAsyncFailed这个参数。如果有返回响应报文则不会重试了，
+</p>
+<p>
+    如果是ResponseCode.FLUSH_DISK_TIMEOUT，ResponseCode.FLUSH_SLAVE_TIMEOUT，ResponseCode.SLAVE_NOT_AVAILABLE，ResponseCode.SUCCESS，则直接回调sendCallback.onSuccess，其他的响应码则直接回调sendCallback.onException(e)，其中e是MQBrokerException。如果没有响应报文则重投，重投次数由retryTimesWhenSendAsyncFailed控制。
+</p>
+<pre style="background-color: rgb(255, 255, 255); font-family: &quot;Courier New&quot;; font-size: 10.5pt;"><br/></pre>
+<p>
+    <br/>
+</p>
+<p>
+    <br/>
+</p>
+<pre style="background-color: rgb(255, 255, 255); font-family: &quot;Courier New&quot;; font-size: 10.5pt;"><br/></pre>
