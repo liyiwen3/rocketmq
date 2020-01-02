@@ -1,0 +1,3 @@
+1、broker中的namesrvAddr属性由 （命令行-n参数输入 -> java系统变量rocketmq.namesrv.addr设置 -> 环境变量NAMESRV_ADDR设置）按优先级依次确定
+2、ssl后面要搞懂
+3、broker用文件锁去保证一个用户下只能有一个broker进程

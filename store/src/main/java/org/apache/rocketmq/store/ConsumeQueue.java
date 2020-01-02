@@ -39,7 +39,7 @@ public class ConsumeQueue {
 
     private final String storePath;
     private final int mappedFileSize;
-    private long maxPhysicOffset = -1;
+    private long maxPhysicOffset = -1;//这个消费队列在commitlog中的最大偏移量表示的是消息队列在commitlog中最大存储到maxPhysicOffset - 1处
     private volatile long minLogicOffset = 0;
     private ConsumeQueueExt consumeQueueExt = null;
 
